@@ -3,7 +3,7 @@
  * Project 2 - Simulation of Priority Based Round Robin Scheduling Algorithm
  * Author: Joseph Defendre
  * date: 10/18/2023
- * class: CS 350 - Operating Systems
+ * class: CS 350-003 - Operating Systems
  */
 
 import java.io.FileWriter;
@@ -86,14 +86,6 @@ public class SchedSim {
                 Job newJob = new Job(++jobCount, extEvent.getPriority(), currentTime, extEvent.getTimeEstimate());
                 printJobInfo(newJob);
 
-                /*
-                 * Check if the CPU has a job running and the new job has higher priority than
-                 * the currently running job[cpu.getRunningJob()].
-                 * 
-                 * If so then preempt the currently running job and add it to the readyQ
-                 * Assign the CPU to the newJob
-                 */
-
                 if (cpu.getRunningJob() != null && newJob.getPriority() > cpu.getRunningJob().getPriority()) {
                     readyQueue.add(cpu.getRunningJob());
                     cpu.setRunningJob(newJob);
@@ -105,10 +97,7 @@ public class SchedSim {
             } else if (command == 'W') {
                 out.println("\t\tStart I/O for current job:");
                 Job runningJob = cpu.getRunningJob();
-                waitingQueue.add(runningJob); // add the runningJob to waitQ
-
-                // add the runningJob to waitQ
-
+                waitingQueue.add(runningJob);
             } else if (command == 'R') {
                 out.println("\t\tMake waiting Job #" + extEvent.getJobNo() + " ready:");
                 Job waitingJob = waitingQueue.remove(extEvent.getJobNo());
