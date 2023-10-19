@@ -1,5 +1,5 @@
 public class ExternalEvent {
-	
+
 	private char command;
 	private int priority;
 	private int timeEstimate;
