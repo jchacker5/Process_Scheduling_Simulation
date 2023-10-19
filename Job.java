@@ -1,4 +1,3 @@
-
 public class Job implements Comparable<Job> {
 
 	private int jobNo;

@@ -1,22 +1,31 @@
+
 import java.util.HashMap;
 import java.util.Set;
 
 public class WaitingQueue {
-	
-	private HashMap<Integer,Job> map = new HashMap<Integer,Job>();
+
+	private HashMap<Integer, Job> map = new HashMap<Integer, Job>();
 
 	public WaitingQueue() {
 	}
-	
+
 	public void add(Job job) {
-		map.put(job.getJobNo(),job);
+		map.put(job.getJobNo(), job);
 	}
-	
+
 	public Job remove(int jobNo) {
 		return map.remove(jobNo);
 	}
-	
+
 	public Set<Integer> getJobsList() {
 		return map.keySet();
+	}
+
+	public boolean isEmpty() {
+		return map.isEmpty();
+	}
+
+	public Job getJob(int jobNo) {
+		return map.get(jobNo);
 	}
 }
