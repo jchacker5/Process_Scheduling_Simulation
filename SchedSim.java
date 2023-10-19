@@ -1,6 +1,9 @@
 
 /**
  * Project 2 - Simulation of Priority Based Round Robin Scheduling Algorithm
+ * Author: Joseph Defendre
+ * date: 10/18/2023
+ * class: CS 350 - Operating Systems
  */
 
 import java.io.FileWriter;
